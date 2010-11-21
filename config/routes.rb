@@ -1,5 +1,11 @@
 NestedComments::Application.routes.draw do
-  resources :posts
+  resources :comments do
+    resources :comments
+  end
+
+  resources :posts do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
