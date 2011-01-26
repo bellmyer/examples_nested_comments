@@ -20,19 +20,4 @@ class PostsController < ApplicationController
       render :action => :new
     end
   end
-
-  def edit
-    @post = Post.find(params[:id])
-  end
-  
-  def update
-    @post = Post.find(params[:id])
-    
-    @post.update_attributes(params[:post])
-    redirect_to post_path(@post), :notice => 'Your post was updated successfully.'
-  end
-  
-  def destroy
-  end
-
 end

@@ -1,2 +1,13 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h1><%= @post.title %></h1>
+
+<div class="body">
+  <%= @post.body %>  
+</div>
+
+<h2>Comments</h2>
+
+<p><%= link_to 'Add a Comment', new_post_comment_path(@post) %></p>
+
+<ul class="comment_list">
+  <%= render :partial => 'comments/comment', :collection => @post.comments %>
+</ul>
